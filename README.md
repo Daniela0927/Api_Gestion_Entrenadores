@@ -1,42 +1,42 @@
-# Trainer Management API
+# API de gestión de entrenadores
 
-A RESTful API for managing gym trainers and their activities.
+Una API RESTful para gestionar entrenadores de gimnasio y sus actividades.
 
-## Features
+## Características
 
-- Complete CRUD operations for trainers
-- Endpoint to list activities by trainer
-- Data validation
-- Error handling
-- API documentation with Swagger
-
-## Installation
+- Operaciones CRUD completas para entrenadores.
+- Punto final para enumerar actividades por entrenador
+- Validación de datos
+- Manejo de errores
+- Documentación API con Swagger
+## Instalación
 
 ```bash
-# Install dependencies
-npm install
+# Instalar dependencias
+instalación npm
 
-# Start the server
-npm start
+# Iniciar el servidor
+inicio de npm
 
-# Start the server with auto-reload (development)
-npm run dev
+# Iniciar el servidor con recarga automática (desarrollo)
+npm ejecutar desarrollador
 ```
 
-## API Endpoints
+## Puntos finales API
 
-Base path: `/trainers`
+Ruta base: `/entrenadores`
 
-| Method | Endpoint | Description |
+| Método | Punto final | Descripción |
 |--------|----------|-------------|
-| GET | /trainers | List all trainers |
-| GET | /trainers/{id} | Get a specific trainer |
-| POST | /trainers | Create a new trainer |
-| PUT | /trainers/{id} | Update a trainer |
-| DELETE | /trainers/{id} | Delete a trainer |
-| GET | /trainers/{id}/activities | List activities for a trainer |
+| OBTENER | /entrenadores | Listar todos los entrenadores |
+| OBTENER | /entrenadores/{id} | Consigue un entrenador específico |
+| PUBLICAR | /entrenadores | Crear un nuevo entrenador |
+| PONER | /entrenadores/{id} | Actualizar un entrenador |
+| BORRAR | /entrenadores/{id} | Eliminar un entrenador |
+| OBTENER | /entrenadores/{id}/actividades | Lista de actividades para un formador |
 
-## Trainer Model
+## 
+Modelo de entrenador
 
 ```json
 {
@@ -48,58 +48,59 @@ Base path: `/trainers`
 }
 ```
 
-## API Documentation
+## API Documentacion
+Documentación
 
-Swagger documentation is available at `/api-docs` when the server is running.
+La documentación de Swagger está disponible en `/api-docs` cuando el servidor se está ejecutando.
 
-## Sample Requests
+## Solicitudes de muestra
 
-### Get all trainers
+### Consigue todos los entrenadores
 
 ```bash
-curl -X GET http://localhost:3000/trainers
+curl -X OBTENER http://localhost:3000/trainers
 ```
 
-### Get a specific trainer
+### Consigue un entrenador específico
 
 ```bash
-curl -X GET http://localhost:3000/trainers/1
+curl -X OBTENER http://localhost:3000/trainers/1
 ```
 
-### Create a new trainer
+### Crear un nuevo entrenador
 
 ```bash
-curl -X POST http://localhost:3000/trainers \
-  -H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/entrenadores \
+  -H "Tipo de contenido: aplicación/json" \
   -d '{
     "nombre": "Ana López",
     "especialidad": "Pilates",
     "horarios": ["martes 11am", "jueves 11am"],
-    "certificaciones": ["Pilates Method Alliance", "BASI Pilates"]
+    "certificaciones": ["Alianza Método Pilates", "BASI Pilates"]
   }'
 ```
 
-### Update a trainer
+### Actualizar un entrenador
 
 ```bash
 curl -X PUT http://localhost:3000/trainers/1 \
-  -H "Content-Type: application/json" \
+  -H "Tipo de contenido: aplicación/json" \
   -d '{
     "nombre": "Juan Pérez",
     "especialidad": "CrossFit",
     "horarios": ["lunes 8am", "miércoles 10am", "viernes 8am"],
-    "certificaciones": ["CrossFit Level 1", "CrossFit Level 2", "NASM CPT"]
+    "certificaciones": ["CrossFit Nivel 1", "CrossFit Nivel 2", "NASM CPT"]
   }'
 ```
 
-### Delete a trainer
+### Eliminar un entrenador
 
 ```bash
-curl -X DELETE http://localhost:3000/trainers/1
+curl -X BORRAR http://localhost:3000/trainers/1
 ```
 
-### Get activities for a trainer
+### Obtener actividades para un entrenador
 
 ```bash
-curl -X GET http://localhost:3000/trainers/1/activities
+curl -X OBTENER http://localhost:3000/trainers/1/activities
 ```
